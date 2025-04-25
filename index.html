@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Jayanth Vinay - Portfolio Website</title>
+    <meta name="keywords" content="Malla Jayanth Vinay,portfolio, web development, design, your skills">
+    <meta name="description" content="Hello, Malla Jayanth Vinay here! Web Developer, Tech Enthusiast, an Engineering student | I like developing Stuffs by coding.">
+    <meta name="author" content="Malla Jayanth Vinay">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { font-family: 'Arial', sans-serif; background: #F8F7F4; width: 100%; height: 100%; }
+        main { width: 100%; }
+        /* Header/Nav */
+        .header nav {
+            background: linear-gradient(90.42deg, #232222 37.22%, #232222 73.87%, #232222 112.26%);
+            font-size: 1.1vw;
+            font-weight: 600;
+            padding: 1.3vw 1vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            height: 11vh;
+            z-index: 100;
+            text-align: center;
+        }
+        .link { display: flex; gap: 1.5vw; align-items: center; justify-content: center; }
+        .header nav .link a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.5vw;
+            padding: 1.3vw 2vw;
+        }
+        .header nav .link a.active { color: #0bda51; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; margin-left: 1vw; }
+        .bar { width: 25px; height: 3px; background: #fff; margin: 4px 0; }
+        @media (max-width: 768px) {
+            .header nav .link { display: none; flex-direction: column; background: #000; position: absolute; top: 11vh; left: 0; width: 100%; }
+            .header nav .link.active { display: flex; }
+            .hamburger { display: flex; }
+        }
+        /* Section base */
+        section { padding: 6vw 0 2vw 0; min-height: 60vh; }
+        /* Home */
+        #home { background-color: whitesmoke; display: flex; align-items: center; justify-content: center; }
+        .hero {
+            width: 100%; max-width: 1200px; display: flex; align-items: center; border-radius: 2vw; justify-content: space-between; gap: 3vw; padding: 2rem; background: linear-gradient(22deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+        }
+        .hero-content { max-width: 50%; }
+        .hero-content h1 { font-size: 2.9vw; font-weight: 600; color: rgb(251, 224, 18); }
+        .hero-content p { margin: 1rem 0; font-size: 1.9vw; color: #000000; }
+        .hero-content button {
+            background:greenyellow; color: #000; outline: none; border: none; cursor: pointer;
+            font-size: 1.1vw; font-weight: 600; padding: 1.3vw 2vw; border-radius: 2vw;
+        }
+        .hero-image img {
+            border-radius: 20%; width: 24vw; height: 24vw; object-fit: cover; margin-top: 15px;
+            border: 4px solid #fff;
+        }
+        /* About */
+        #about { background: #fff; display: flex; align-items: center; justify-content: center; }
+        .about-container {
+            width: 100%; max-width: 1200px; display: flex; align-items: center; border-radius: 2vw; justify-content: space-between; gap: 3vw; padding: 2rem; background: linear-gradient(22deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+        
+        }
+        .about-photo img {
+            width: 18vw; min-width: 120px; max-width: 200px; border-radius: 50%; border: 3px solid #0bda51; box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+        }
+        .about-details {
+            flex: 1;
+        }
+        .about-details h2 { font-size: 2.2vw; color: #52f5ed; margin-bottom: 1vw; }
+        .about-details p { font-size: 1.2vw; color: whitesmoke; margin-bottom: 1vw; }
+        .about-details ul { margin: 1vw 0 0 1.5vw; }
+        .about-details ul li { font-size: 1.1vw; color: #ffffff; margin-bottom: 0.5vw; }
+        
+                /* Services */
+        .services {
+            text-align: center;
+            width: 100%;
+            min-height: 70vh;
+            display: flex; align-items: center; justify-content: center;
+            
+        }
+
+        .services-container{
+            width: 100%; max-width: 1200px; align-items: center; border-radius: 2vw; justify-content: center; gap: 3vw; padding: 2rem; background: linear-gradient(22deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+
+        }
+        .services h2 {
+            font-size: 3vw;
+            text-decoration: center;
+            color: #F8F7F4;
+        }
+        .service {
+            margin: 1.5vw auto;
+        }
+        .service h3 {
+            color: #0bda51;
+            font-size: 2vw;
+        }
+        .service p {
+            font-size: 1.6vw;
+            color: #fff;
+        }
+
+        /* Projects */
+        .projects {
+            text-align: center;
+            width: 100%;
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            
+        }
+
+        .projects-container{
+            width: 100%; max-width: 1200px; align-items: center; border-radius: 2vw; justify-content: center; gap: 3vw; padding: 2rem; background: linear-gradient(22deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+
+        }
+        .projects h2 {
+            font-size: 3vw;
+            color: #F8F7F4;
+        }
+        .project {
+            display: inline-block;
+            margin: 1vw;
+            vertical-align: top;
+        }
+        .project img {
+            width: 20vw;
+            height: 8vw;
+            object-fit: cover;
+            border-radius: 1vw;
+        }
+        .project p {
+            font-size: 1.6vw;
+            color: aqua;
+        }
+
+        /* Skills */
+        .skills {
+            text-align: center;
+            width: 100%;
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .skills-container{
+            width: 100%; max-width: 1200px; align-items: center; border-radius: 2vw; justify-content: center; gap: 3vw; padding: 2rem; background: linear-gradient(22deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+
+        }
+        .skills h3 {
+            font-size: 2.6vw;
+            color: rgb(23, 16, 22);
+        }
+        .skill {
+            margin: 1rem auto;
+            font-size: 1.6vw;
+            color: #fff;
+            line-height: 3vw;
+            max-width: 400px;
+        }
+        .progress-bar {
+            background-color: #f5f5f5;
+            border-radius: 25px;
+            overflow: hidden;
+            margin: 0.5vw 0;
+        }
+        .progress {
+            background-color: rgb(50, 205, 133);
+            height: 3vw;
+            border-radius: 25px;
+            color: #fff;
+            text-align: right;
+            padding-right: 1vw;
+            line-height: 3vw;
+            font-weight: 600;
+        }
+        .download {
+            margin-top: 2vw;
+        }
+        .download-btn {
+            width: 18vw;
+            height: 4.5vw;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 3vw;
+            font-weight: 600;
+            font-size: 1.1vw;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background-color: green;
+            color: #000;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+            width: 100%;
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .contact-container{
+            width: 100%; max-width: 1200px; align-items: center; border-radius: 2vw; justify-content: center; gap: 3vw; padding: 2rem; background: linear-gradient(22deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+
+
+        }
+        .contact h2 {
+            font-size: 3vw;
+            color: #F8F7F4;
+        }
+        .contact form input, .contact form textarea {
+            width: 80%;
+            margin: 1vw 0;
+            padding: 1rem;
+            border: none;
+            outline: none;
+            border-radius: 3vw;
+            font-size: 1.2vw;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 10px black;
+            font-weight: 600;
+        }
+        .contact form textarea {
+            resize:none; overflow-y:auto; 
+        }
+        .contact form button {
+            background-color: #0bda51;
+            color: #000;
+            cursor: pointer;
+            width: 13vw;
+            height: 4.5vw;
+            border: none;
+            border-radius: 3vw;
+            font-weight: 600;
+            font-size: 1.2vw;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            width: 100%;
+            height: 15vh;
+            padding: 1vw 2vw;
+            background: linear-gradient(90.42deg, #232222 37.22%, #232222 73.87%, #232222 112.26%);
+            display: flex;
+            flex-direction: column;
+            color: rgb(68, 255, 62);
+            align-items: center; justify-content: center;
+        }
+
+        .footer-p1 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 2vw;
+            margin-top: 1vw;
+        }
+        .footer-p1 a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer-p1 a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <nav>
+                <div class="link" id="nav-links">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+        <!-- Home Section -->
+        <section id="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Hello, I'm <span>Malla Jayanth Vinay</span></h1>
+                    <p>Web Developer | Creative Technologist | Problem Solver</p>
+                    <button onclick="window.open('mailto:mallajayanthvinay@email.com','_blank')">Let's Chat 💬</button>
+                </div>
+                <div class="hero-image">
+                    <img src="Profile.jpeg" alt="Profile Image" />
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-container">
+                <div class="about-photo">
+                    <img src="Profile.jpeg" alt="Malla Jayanth Vinay's photo">
+                </div>
+                <div class="about-details">
+                    <h2>About Me</h2>
+                    <p>
+                        Hi, I'm <strong>Malla Jayanth Vinay</strong> – a passionate web developer and creative problem solver. My journey began with a fascination for how technology shapes the world, leading me to pursue Computer Science Engineering at Anil Neerukonda Institute of Technology.<br><br>
+                        I thrive on building elegant, user-focused web experiences and love tackling new challenges. My work blends technical skill with creative vision, and I always strive to bring authenticity and innovation to every project.
+                    </p>
+                    <ul>
+                        <li><strong>Education:</strong> Computer Science Engineering, Anil Neerukonda Institute of Technology</li>
+                        <li><strong>Skills:</strong> HTML, CSS, JavaScript, Java, C</li>
+                        <li><strong>Interests:</strong> Product Innovation, Blogging, Creative Ideation</li>
+                        <li><strong>Values:</strong> Collaboration, Authenticity, Lifelong Learning</li>
+                    </ul>
+                    <p>
+                        <em>Let's connect and create something impactful together!</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <marquee bgcolor="white"
+direction="left"
+ loop="" onmouseover="this.stop();" onmouseout="this.start();">
+                                  
+  <strong style ="color: black"><p style="font-size: xx-large; padding: 0.5vw 0; font-weight: bold; background-color: #a1adf1;"> Front-end Development, Web Designing & Development, Product Innovation, Blogger, Problem Solving, Creative Ideation </p></strong>
+  
+  </marquee>
+        <section class="services" id="services">
+            <div class="services-container">
+            <h2><strong>What I Do?</strong> </h2>
+            <div class="service">
+                <h3>Front-end Developer</h3>
+                <p>Development of Spider Man Graphics with Marvel Studios.</p>
+            </div>
+            <div class="service">
+                <h3>UI Designer</h3>
+                <p>Design elegant of UI&UX, experience with Lisa Creations.</p>
+            </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="services-container">
+            <h2>Recent Projects</h2>
+            <div class="project">
+                <img src="P1.jpeg" alt="Project 1">
+                <p><a href="https://jayanthvinaymalla.github.io/jayanthvinay.github.io/"><span style="background-color: #404040; color: #3cff00;">Web Page Design</span></a></p>
+            </div>
+            <div class="project">
+                <img src="P2.jpeg" alt="Project 2">
+                <p><a href="https://jayanthvinaymalla.github.io/"><span style="background-color: #404040; color: #3cff00;">Responsive SignUp</span></a></p>
+            </div>
+            <div class="project">
+                <img src="RESUME.jpeg" alt="Project 3">
+                <p><a href="https://jayanthvinaymalla.github.io/Portfolio/"><span style="background-color: #404040; color: #3cff00;">Portfolio</span></a></p>
+            </div>
+            <div class="project">
+                <img src="crypto2.jpeg" alt="Project 4">
+                <p><a href="https://jayanthvinaymalla.github.io/jayanthvinaymalla.github.io-coinmarketcap/"><span style="background-color: #404040; color: #3cff00;">Crypto</span></a></p>
+            </div>
+            </div>
+        </section>
+        <section class="skills" id="skills">
+            <div class="skills-container">
+            <h3>My Skills</h3>
+            <div class="skill">
+                <strong><span><p><abbr title="HyperText Markup Language">HTML</abbr></p></span></strong>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;">70%</div>
+                    
+                </div>
+            </div>
+            <div class="skill">
+                <strong><span><p><abbr title="Cascading Style Sheets">CSS</abbr></p></span></strong>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 55%;">55%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <strong><span><p><abbr title="C Language">C</abbr></p></span></strong>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">60%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <strong><span><p><abbr title="Java Programming Language">JAVA</abbr></p></span></strong>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;">75%</div>
+                </div>
+            </div>
+            <div class="download">
+                <a href="Sample Resume.pdf" download>
+                    <button class="download-btn">📂Download Resume </button>
+                </a>
+            </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-container">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Enter your name" required>
+                <input type="email" placeholder="Enter your email" required>
+                <textarea placeholder="Enter your message" required></textarea><br>
+                <button type="submit" formaction="window.open('mailto:mallajayanthvinay@email.com','_blank')">Send Message</button>
+            </form>
+            </div>
+        </section>
+        <footer>
+            <div>
+                <span><p>&copy;
+                    <script type="text/javascript">
+                        document.write(new Date().getFullYear());
+                    </script>
+                    <a href="https://github.com/jayanthvinaymalla" style="color: rgb(255, 255, 255); font-weight: 800;">Vinay</a> All rights
+                    reserved.
+                </span>
+                
+            </div>
+            <div class="footer-p1">
+                <a href="#">Blog</a>
+                <a href="#">About</a>
+                <a href="#">Support</a>
+            </div>
+        </footer>
+    </main>
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Navbar active link
+        document.querySelectorAll('.link a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.link a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
